@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#6d45d8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="LIFT App">
+<meta name="apple-mobile-web-app-title" content="LIFT DAILY">
 <link rel="manifest" href="manifest.json">
-<title>LIFT App — Liḥayātī for Trauma-Recovery</title>
+<title>LIFT DAILY — Liḥayātī for Trauma-Recovery</title>
 <style>
 :root{
  --purple:#7047d9;--purple2:#8d69e8;--lav:#f3efff;--mint:#e9f8f4;--green:#38a169;
@@ -129,7 +129,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:
 @keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
 
 
-/* === LIFT-DAILY Logo & Daily Activities === */
+/* === LIFT DAILY Logo & Daily Activities === */
 .opening-logo{
   width:88px;height:88px;border-radius:28px;margin:0 auto 15px;display:grid;place-items:center;
   background:linear-gradient(145deg,#6f4bd8,#9a7ce8);color:#fff;
@@ -178,6 +178,28 @@ body{background:linear-gradient(180deg,#f8f7ff 0%,#f5f8fc 100%)}
 
 /* Modern LIFT DAILY upgrades */
 .activity-focus{margin-top:14px;padding:16px;border-radius:22px;background:linear-gradient(135deg,rgba(109,69,216,.12),rgba(255,255,255,.78));border:1px solid rgba(109,69,216,.14);transition:.35s;animation:focusIn .45s ease}.activity-focus b{display:block;font-size:14px}.activity-focus p{margin:6px 0 0;color:var(--muted);font-size:11px;line-height:1.55}.reflection-options{display:grid;gap:10px;margin-top:12px}.reflection-option{width:100%;text-align:left;border:1px solid rgba(109,69,216,.13);background:#fff;border-radius:18px;padding:13px 14px;cursor:pointer;transition:.22s;box-shadow:0 5px 16px rgba(40,25,80,.05)}.reflection-option:hover{transform:translateY(-2px)}.reflection-option.sel{border-color:var(--purple);background:rgba(109,69,216,.09);box-shadow:0 8px 24px rgba(109,69,216,.14);transform:scale(1.01)}.reflection-option span{font-size:12px;font-weight:700;line-height:1.45}.mood.sel{animation:moodSelected .55s cubic-bezier(.2,.9,.25,1)}.mood .e{transition:transform .18s}.mood:hover .e{transform:scale(1.16) rotate(-4deg)}.mood-burst{position:absolute;inset:10px;border-radius:50%;border:3px solid rgba(109,69,216,.35);animation:burst .55s ease-out forwards;pointer-events:none}.mood{position:relative;overflow:visible}@keyframes moodSelected{0%{transform:scale(1)}35%{transform:scale(1.12) rotate(-2deg)}70%{transform:scale(.96) rotate(2deg)}100%{transform:scale(1)}}@keyframes burst{0%{transform:scale(.35);opacity:1}100%{transform:scale(1.8);opacity:0}}@keyframes focusIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.milestone-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(28,18,54,.48);backdrop-filter:blur(8px)}.milestone-overlay.show{display:flex;animation:overlayIn .3s ease}.milestone-box{width:min(330px,88vw);padding:28px 22px;border-radius:30px;background:#fff;text-align:center;box-shadow:0 25px 70px rgba(0,0,0,.25);animation:celebrate .8s cubic-bezier(.16,1.4,.3,1)}.milestone-emoji{font-size:76px;display:block;animation:emojiPop .9s ease infinite alternate}.milestone-box h2{margin:10px 0 5px;font-size:26px}.milestone-box p{margin:0;color:var(--muted);font-size:13px}.milestone-stars{font-size:25px;margin-top:12px;letter-spacing:8px;animation:stars 1s ease-in-out infinite alternate}@keyframes overlayIn{from{opacity:0}to{opacity:1}}@keyframes celebrate{0%{transform:scale(.55) rotate(-6deg)}70%{transform:scale(1.05) rotate(2deg)}100%{transform:scale(1) rotate(0)}}@keyframes emojiPop{from{transform:scale(.9) rotate(-7deg)}to{transform:scale(1.12) rotate(7deg)}}@keyframes stars{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+
+/* === LIFT DAILY Guided Activity Timers === */
+.activity-focus-btn{width:100%;margin-top:10px;border:0;border-radius:14px;padding:11px 13px;background:var(--purple);color:#fff;font-weight:900;font-size:10px;cursor:pointer}
+.activity-focus-btn.secondary{background:#eee9fa;color:var(--purple)}
+.timer-card{text-align:center}
+.timer-circle{width:190px;height:190px;margin:18px auto;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--purple) var(--timer-p,0%),#eeeaf7 0);position:relative}
+.timer-circle:before{content:"";position:absolute;inset:10px;border-radius:50%;background:#fff}
+.timer-inner{position:relative;z-index:1}
+.timer-value{font-size:40px;font-weight:900;color:var(--purple);letter-spacing:-2px}
+.timer-label{font-size:10px;color:var(--muted);font-weight:800}
+.dhikr-box{padding:16px;border-radius:18px;background:linear-gradient(145deg,#f7f2ff,#fff);border:1px solid #e4dcf4;margin:12px 0}
+.dhikr-ar{font-size:22px;font-weight:900;color:var(--purple)}
+.dhikr-name{font-size:11px;font-weight:800;margin-top:5px}
+.timer-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.timer-actions button{border:0;border-radius:13px;padding:11px;font-weight:900;cursor:pointer}
+.timer-actions .stop{background:#f5e8ea;color:#a13c48}
+.audio-wrap{margin-top:12px;border-radius:16px;overflow:hidden;background:#111}
+.audio-wrap iframe{display:block;width:100%;height:210px;border:0}
+.condition-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.condition-box{padding:12px;border-radius:15px;background:#faf9fd;border:1px solid var(--line)}
+.condition-box b{display:block;font-size:18px;color:var(--purple)}
+.condition-box small{font-size:9px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -186,14 +208,14 @@ body{background:linear-gradient(180deg,#f8f7ff 0%,#f5f8fc 100%)}
   <div class="opening-orb one"></div><div class="opening-orb two"></div>
   <div class="opening-box">
     <div class="opening-logo"><div class="lift-logo-mark"></div><span class="logo-spark s1">✦</span><span class="logo-spark s2">✦</span></div>
-    <div class="opening-kicker">Selamat datang di LIFT-DAILY</div>
+    <div class="opening-kicker">Selamat datang di LIFT DAILY</div>
     <div class="opening-title">Lihayati For <span>Trauma Recovery</span></div>
     <div style="font-size:13px;font-weight:900;color:#514765;margin:-2px 0 12px">
       Sahabat Terbaik di Setiap Langkah Pulihmu.
     </div>
     <p class="opening-desc">
       Langkahmu sampai di sini adalah sebuah keberanian besar. Mulai hari ini,
-      kamu tidak perlu lagi memeluk luka dan berjalan sendirian. LIFT-DAILY hadir
+      kamu tidak perlu lagi memeluk luka dan berjalan sendirian. LIFT DAILY hadir
       sebagai ruang aman yang siap mendengarkan, memeluk setiap emosimu tanpa
       menghakimi, dan menemanimu di setiap langkah kecil menuju pemulihan.
       Mari perlahan-lahan menata kembali senyummu, hari demi hari.
@@ -217,7 +239,7 @@ body{background:linear-gradient(180deg,#f8f7ff 0%,#f5f8fc 100%)}
 <div id="app">
 <section id="loginScreen" class="login">
  <div class="loginbox">
-  <div class="logo">♡</div><h1>LIFT App</h1>
+  <div class="logo">♡</div><h1>LIFT DAILY</h1>
   <p><b>Liḥayātī for Trauma-Recovery</b><br>Teman refleksi, pemulihan, dan penguatan diri.</p>
   <div id="loginForm">
    <div class="field"><label>Nama pengguna</label><input id="loginUser" placeholder="Nama pengguna"></div>
@@ -316,6 +338,40 @@ body{background:linear-gradient(180deg,#f8f7ff 0%,#f5f8fc 100%)}
   <button class="primary" onclick="finishActivity()">Selesaikan Kegiatan</button>
  </div>
  <div class="card"><div class="title">Catatan</div><div class="hint">Lakukan perlahan dan penuh kesadaran. Tekan “+” setiap selesai membaca satu kali.</div></div>
+</section>
+
+
+<section id="guidedActivity" class="screen">
+ <div class="card timer-card">
+   <div class="sectionhead"><div><div class="title" id="guidedTitle">🏃 Jogging + Dzikir</div><div class="hint" id="guidedHint">Lakukan dengan nyaman dan jangan memaksakan diri.</div></div><span class="status" id="guidedStatus">20:00</span></div>
+   <div class="timer-circle" id="guidedCircle" style="--timer-p:100%">
+     <div class="timer-inner"><div class="timer-value" id="guidedTimer">20:00</div><div class="timer-label">WAKTU TERSISA</div></div>
+   </div>
+   <div class="dhikr-box" id="dhikrBox">
+     <div class="dhikr-ar" id="guidedDhikr">Astaghfirullah</div>
+     <div class="dhikr-name" id="guidedDhikrName">Ulangi dengan ritme yang nyaman.</div>
+   </div>
+   <div class="timer-actions">
+     <button onclick="toggleGuidedTimer()" id="guidedPauseBtn">⏸ Jeda</button>
+     <button class="stop" onclick="cancelGuidedActivity()">✕ Batalkan</button>
+   </div>
+   <div class="hint" style="margin-top:10px">Jika tubuh terasa tidak nyaman, berhenti dan beristirahat.</div>
+ </div>
+</section>
+
+<section id="calmMusic" class="screen">
+ <div class="card timer-card">
+   <div class="sectionhead"><div><div class="title">🎵 Musik Tenang</div><div class="hint">Dengarkan selama 10 menit dengan nyaman.</div></div><span class="status" id="musicStatus">10:00</span></div>
+   <div class="audio-wrap"><iframe id="calmYoutube" title="Musik Tenang" src="" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+   <div class="timer-circle" id="musicCircle" style="--timer-p:100%">
+     <div class="timer-inner"><div class="timer-value" id="musicTimer">10:00</div><div class="timer-label">WAKTU TERSISA</div></div>
+   </div>
+   <div class="timer-actions">
+     <button onclick="toggleMusicTimer()" id="musicPauseBtn">⏸ Jeda</button>
+     <button class="stop" onclick="cancelMusicActivity()">✕ Batalkan</button>
+   </div>
+   <div class="hint" style="margin-top:10px">Setelah 10 menit selesai, aktivitas otomatis ditandai selesai dan kembali ke beranda.</div>
+ </div>
 </section>
 
 <section id="after" class="screen">
@@ -451,10 +507,10 @@ function showOpeningAfterLogin(){
   if(document.getElementById('openingScreen'))return;
   const div=document.createElement('div');div.id='openingScreen';
   div.innerHTML=`<div class="opening-orb one"></div><div class="opening-orb two"></div><div class="opening-box">
-    <div class="opening-logo"><div class="lift-logo-mark"></div><span class="logo-spark s1">✦</span><span class="logo-spark s2">✦</span></div><div class="opening-kicker">Selamat datang di LIFT-DAILY</div>
+    <div class="opening-logo"><div class="lift-logo-mark"></div><span class="logo-spark s1">✦</span><span class="logo-spark s2">✦</span></div><div class="opening-kicker">Selamat datang di LIFT DAILY</div>
     <div class="opening-title">Lihayati For <span>Trauma Recovery</span></div>
     <div style="font-size:13px;font-weight:900;color:#514765;margin:-2px 0 12px">Sahabat Terbaik di Setiap Langkah Pulihmu.</div>
-    <p class="opening-desc">Langkahmu sampai di sini adalah sebuah keberanian besar. Mulai hari ini, kamu tidak perlu lagi memeluk luka dan berjalan sendirian. LIFT-DAILY hadir sebagai ruang aman yang siap mendengarkan, memeluk setiap emosimu tanpa menghakimi, dan menemanimu di setiap langkah kecil menuju pemulihan. Mari perlahan-lahan menata kembali senyummu, hari demi hari.<br><br><b style="color:#6f4bd8">Kamu berharga, dan kamu pasti bisa melaluinya.</b></p>
+    <p class="opening-desc">Langkahmu sampai di sini adalah sebuah keberanian besar. Mulai hari ini, kamu tidak perlu lagi memeluk luka dan berjalan sendirian. LIFT DAILY hadir sebagai ruang aman yang siap mendengarkan, memeluk setiap emosimu tanpa menghakimi, dan menemanimu di setiap langkah kecil menuju pemulihan. Mari perlahan-lahan menata kembali senyummu, hari demi hari.<br><br><b style="color:#6f4bd8">Kamu berharga, dan kamu pasti bisa melaluinya.</b></p>
     <div class="opening-feature"><div><b>🌱</b><small>Program<br>10 Hari</small></div><div><b>⭐</b><small>Misi &<br>Poin</small></div><div><b>📈</b><small>Progres<br>Harian</small></div></div>
     <div class="opening-quote"><div><div id="dailyMotivation">Hari ini adalah kesempatan untuk melangkah satu langkah kecil.</div><span id="dailyMotivationAuthor">— LIFT</span></div></div>
     <div class="opening-cta"><button class="opening-btn" onclick="enterFromOpening()">Masuk ke Beranda LIFT ✨</button><div class="opening-sub">Tidak perlu sempurna. Cukup mulai dari satu langkah.</div></div>
@@ -486,13 +542,29 @@ function toDzikir(){if(!laitani.value.trim()&&!lihayati.value.trim()&&!qaddamtu.
 function renderDz(){dzikirList.innerHTML=DZS.map((d,i)=>`<div class="dzikir"><div class="dzicon">${i+1}</div><div><b>${d}</b><small style="display:block;color:var(--muted);font-size:9px">Target 33x</small></div><div class="counter"><button class="countbtn" onclick="changeDz(${i},-1)">−</button><div class="countnum">${dzCounts[i]}/33</div><button class="countbtn" onclick="changeDz(${i},1)">+</button></div></div>`).join('');dzProgress.textContent=dzCounts.filter(x=>x>=33).length+'/3 selesai'}
 function changeDz(i,d){dzCounts[i]=Math.max(0,Math.min(33,dzCounts[i]+d));renderDz()}
 function finishActivity(){if(dzCounts.some(x=>x<33))return alert('Selesaikan masing-masing dzikir sampai 33x terlebih dahulu.');show('after')}
+function emotionWellbeing(indices){
+  if(!indices || !indices.length) return 50;
+  const weights={0:20,1:25,2:20,3:30,4:25,5:25,6:30,7:20,8:35,9:30,10:40,11:30,12:70,13:85,14:90,15:95};
+  return indices.reduce((sum,i)=>sum+(weights[i]??50),0)/indices.length;
+}
+function journalDepth(){
+  const texts=[laitani.value.trim(),lihayati.value.trim(),qaddamtu.value.trim(),emotionNote.value.trim()].filter(Boolean);
+  if(!texts.length)return 0;
+  const chars=texts.join(' ').length;
+  return Math.min(100,Math.round((texts.length/4)*55 + Math.min(chars,600)/600*45));
+}
 function calcScore(){
- const sessions=getSessions(); if(!sessions.length)return 0;
- const s=sessions[sessions.length-1]; 
- const emotionGain=Math.max(0,(avg(s.after)-avg(s.before))/5)*25;
- const emotionBase=(avg(s.after)/5)*35;
- const journal=([laitani.value.trim(),lihayati.value.trim(),qaddamtu.value.trim()].filter(Boolean).length/3)*25;
- const dz=15; return Math.round(Math.min(100,emotionGain+emotionBase+journal+dz));
+  const beforeCondition=emotionWellbeing(before);
+  const afterCondition=emotionWellbeing(after);
+  const improvement=Math.max(-20,Math.min(20,afterCondition-beforeCondition));
+  const currentCondition=afterCondition;
+  const journal=journalDepth();
+  const activity=getDailyActivityState();
+  const activityCount=activity.date===todayKey()&&activity.done?Object.values(activity.done).filter(Boolean).length:0;
+  const activityPart=(activityCount/3)*15;
+  // Refleksi kondisi saat ini: 55% kondisi emosional setelah kegiatan,
+  // 20% perubahan dibanding sebelum kegiatan, 10% kedalaman jurnal, 15% konsistensi aktivitas.
+  return Math.round(Math.max(0,Math.min(100,currentCondition*.55 + (50+improvement)*.20 + journal*.10 + activityPart)));
 }
 function avg(a){return a.length?a.reduce((sum,i)=>sum+(i+1),0)/a.length:3}
 function statusFor(n){return n<=30?'Perlu Perhatian':n<=50?'Mulai Membaik':n<=75?'Membaik':'Pulih'}
@@ -576,23 +648,40 @@ function completeDailyActivity(period){
   if(allDone){const completedDays=Object.values(state.history).filter(d=>d&&d.morning&&d.noon&&d.night).length;showMilestone(completedDays)}
   renderHome();renderProgram();
 }
-function showMilestone(days){const cfg=days>=10?['🤲','ALHAMDULILLAH!','10 hari selesai. MasyaAllah, kamu sudah menyelesaikan perjalanan 10 hari.']:days>=5?['🎉','HORE!','5 hari selesai! Pertahankan langkah kecilmu.']:['👍','MANTAP!','Semua kegiatan hari ini selesai. Kamu hebat sudah konsisten.'];const shown=JSON.parse(localStorage.getItem(key('milestonesShown'))||'[]');const milestone=days>=10?10:days>=5?5:1;if(shown.includes(milestone))return;shown.push(milestone);localStorage.setItem(key('milestonesShown'),JSON.stringify(shown));document.getElementById('milestoneEmoji').textContent=cfg[0];document.getElementById('milestoneTitle').textContent=cfg[1];document.getElementById('milestoneText').textContent=cfg[2];document.getElementById('milestoneOverlay').classList.add('show');}
+function showMilestone(days){
+  const cfg=days>=10?['🏆','HEBATTT!','10 hari selesai! MasyaAllah, kamu berhasil menyelesaikan perjalanan 10 hari.']:['👍','MANTAP!','Semua kegiatan hari ini selesai. Kamu hebat sudah konsisten.'];
+  const shown=JSON.parse(localStorage.getItem(key('milestonesShown'))||'[]');
+  const milestone=days>=10?10:1;
+  if(shown.includes(milestone))return;
+  shown.push(milestone);localStorage.setItem(key('milestonesShown'),JSON.stringify(shown));
+  document.getElementById('milestoneEmoji').textContent=cfg[0];
+  document.getElementById('milestoneTitle').textContent=cfg[1];
+  document.getElementById('milestoneText').textContent=cfg[2];
+  document.getElementById('milestoneOverlay').classList.add('show');
+}
 function closeMilestone(e){if(e&&e.target&&e.target.id!=='milestoneOverlay')return;document.getElementById('milestoneOverlay').classList.remove('show')}
 
 function renderDailyActivities(){
   const root=document.getElementById('dailyActivitiesHome');
   if(!root)return;
-  const {idx,data}=getDailyActivityData(), state=getDailyActivityState();
+  const {data}=getDailyActivityData(), state=getDailyActivityState();
   const items=[['Pagi','morning',data.morning],['Siang','noon',data.noon],['Malam','night',data.night]];
   root.innerHTML=items.map(([label,keyName,a])=>{
     const done=state.date===todayKey()&&state.done&&state.done[keyName];
-    const isNight=keyName==='night';
+    let action='';
+    if(done) action='<button class="activity-focus-btn secondary" disabled>✓ Sudah selesai hari ini</button>';
+    else if(a.title.toLowerCase().includes('jogging') || a.title.toLowerCase().includes('jogging + dzikir') || (a.title.toLowerCase().includes('jalan pagi') && a.title.toLowerCase().includes('dzikir')))
+      action='<button class="activity-focus-btn" onclick="startJoggingDzikir()">🏃 Mulai Jogging + Dzikir • 20 Menit</button>';
+    else if(a.title.toLowerCase()==='musik tenang')
+      action='<button class="activity-focus-btn" onclick="startCalmMusic()">🎵 Dengarkan Musik Tenang • 10 Menit</button>';
+    else
+      action=`<button class="activity-focus-btn" onclick="completeDailyActivity('${keyName}')">✓ Tandai kegiatan selesai</button>`;
     return `<div class="daily-activity-card">
       <span class="time-chip">${label}</span>
       <div style="font-size:11px;font-weight:900;margin-top:8px">${a.title}</div>
       <div class="activity-meta">${a.desc}</div>
-      ${isNight?'<div class="activity-meta">🌙 Jurnal hanya tersedia pada sesi malam.</div>':''}
-      <label class="activity-complete"><input type="checkbox" ${done?'checked':''} ${done?'disabled':''} onchange="completeDailyActivity('${keyName}')"><span>${done?'Sudah dilakukan hari ini':'Tandai selesai'}</span></label>
+      ${keyName==='night'?'<div class="activity-meta">🌙 Jurnal hanya tersedia pada sesi malam.</div>':''}
+      ${action}
     </div>`;
   }).join('');
 }
@@ -719,7 +808,7 @@ const DAILY_MISSIONS=[
 ];
 const REWARD_NAMES=['Hadiah LIFT #1','Hadiah LIFT #2','Hadiah LIFT #3','Hadiah LIFT #4','Hadiah LIFT #5'];
 
-function todayKey(){return new Date().toISOString().slice(0,10)}
+function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function getRewardData(){
   return JSON.parse(localStorage.getItem(key('rewards'))||'{"points":0,"claimed":0}');
 }
@@ -824,15 +913,82 @@ function renderDailyHomeQuote(){
 
 function renderHome(){
  renderDailyHomeQuote();renderHomeProgram();renderHomePoints();
- const s=getSessions(),score=s.length?s[s.length-1].score:0;homeScore.textContent=score+'%';homeRing.style.setProperty('--p',score+'%');
+ const s=getSessions(),score=calculateCurrentProgress();homeScore.textContent=score+'%';homeRing.style.setProperty('--p',score+'%');
  ['Pagi','Siang','Malam'].forEach(t=>{const found=s.find(x=>new Date(x.date).toDateString()===new Date().toDateString()&&x.time===t);document.getElementById(t==='Pagi'?'morningState':t==='Siang'?'noonState':'nightState').textContent=found?'Selesai ✓':'Belum'});
 }
 function renderProgress(){
- const s=getSessions(),score=s.length?s[s.length-1].score:0;progressScore.textContent=score+'%';progressStatus.textContent=statusFor(score);
+ const s=getSessions(),score=calculateCurrentProgress();progressScore.textContent=score+'%';progressStatus.textContent=statusFor(score);
  chart.innerHTML=s.slice(-7).map((x,i)=>`<div class="cbar" style="height:${Math.max(4,x.score)}%"><span>${x.score}%</span><em>${x.time}</em></div>`).join('')||'<div class="hint" style="position:absolute;inset:60px 0;text-align:center">Belum ada data aktivitas.</div>';
- history.innerHTML=s.slice().reverse().slice(0,12).map(x=>`<div class="history"><b>${x.time} • ${new Date(x.date).toLocaleDateString('id-ID')}</b><small>Emosi: ${x.before.map(i=>EMOTIONS[i][1]).join(', ')} → ${x.after.map(i=>EMOTIONS[i][1]).join(', ')}</small><small>Progress kegiatan: <b>${x.score}% — ${statusFor(x.score)}</b></small></div>`).join('')||'<div class="hint">Belum ada riwayat.</div>';
+ history.innerHTML=s.slice().reverse().slice(0,12).map(x=>{const c=Math.round(emotionWellbeing(x.after));const b=Math.round(emotionWellbeing(x.before));const j=x.journal?Object.values(x.journal).filter(Boolean).length:0;return `<div class="history"><b>${x.time} • ${new Date(x.date).toLocaleDateString('id-ID')}</b><small>Emosi: ${x.before.map(i=>EMOTIONS[i][1]).join(', ')} → ${x.after.map(i=>EMOTIONS[i][1]).join(', ')}</small><div class="condition-grid"><div class="condition-box"><b>${c}%</b><small>Kondisi setelah kegiatan</small></div><div class="condition-box"><b>${c-b>0?'+' : ''}${c-b}%</b><small>Perubahan dari sebelumnya</small></div></div><small>Jurnal terisi: <b>${j}/3 bagian</b> • Skor refleksi: <b>${x.score}% — ${statusFor(x.score)}</b></small></div>`}).join('')||'<div class="hint">Belum ada riwayat.</div>';
 }
 function startBreath(){addMissionPoints('breath');clearInterval(breathTimer);let phases=[['Tarik napas',4],['Tahan napas',7],['Hembuskan napas',8]],p=0,n=4;breathNum.textContent=n;breathText.textContent=phases[0][0];breathTimer=setInterval(()=>{n--;if(n<=0){p=(p+1)%3;n=phases[p][1];breathText.textContent=phases[p][0]}breathNum.textContent=n},1000);toast('Ikuti ritme napas dengan perlahan 🌿')}
+
+function calculateCurrentProgress(){
+  const s=getSessions();
+  if(!s.length)return 0;
+  const todaySessions=s.filter(x=>x.date&&x.date.slice(0,10)===todayKey());
+  const latest=todaySessions.length?todaySessions[todaySessions.length-1]:s[s.length-1];
+  const cond=emotionWellbeing(latest.after);
+  const beforeCond=emotionWellbeing(latest.before);
+  const change=Math.max(-15,Math.min(15,cond-beforeCond));
+  const journalTexts=latest.journal?Object.values(latest.journal).filter(Boolean):[];
+  const journal=Math.min(100,Math.round((journalTexts.length/3)*60 + Math.min(journalTexts.join(' ').length,500)/500*40));
+  const activity=getDailyActivityState();
+  const count=activity.date===todayKey()&&activity.done?Object.values(activity.done).filter(Boolean).length:0;
+  const activityPart=(count/3)*15;
+  return Math.round(Math.max(0,Math.min(100,cond*.55+(50+change)*.20+journal*.10+activityPart)));
+}
+let guidedTimerId=null,guidedRemaining=1200,guidedRunning=false;
+let musicTimerId=null,musicRemaining=600,musicRunning=false;
+const DHIKR_GUIDE=[
+  ['Astaghfirullah','Mohon ampun kepada Allah dengan tenang.'],
+  ['Alhamdulillah','Rasakan syukur dalam setiap langkah.'],
+  ['Subhanallah','Ucapkan perlahan sambil menjaga napas.'],
+  ['La ilaha illallah','Ulangi dengan ritme yang nyaman.']
+];
+function formatTimer(sec){return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
+function updateGuidedTimer(){
+  document.getElementById('guidedTimer').textContent=formatTimer(guidedRemaining);
+  document.getElementById('guidedStatus').textContent=formatTimer(guidedRemaining);
+  document.getElementById('guidedCircle').style.setProperty('--timer-p',(guidedRemaining/1200*100)+'%');
+  const idx=Math.floor((1200-guidedRemaining)/120)%DHIKR_GUIDE.length;
+  document.getElementById('guidedDhikr').textContent=DHIKR_GUIDE[idx][0];
+  document.getElementById('guidedDhikrName').textContent=DHIKR_GUIDE[idx][1];
+}
+function startJoggingDzikir(){
+  clearInterval(guidedTimerId);guidedRemaining=1200;guidedRunning=true;updateGuidedTimer();
+  document.getElementById('guidedTitle').textContent='🏃 Jogging + Dzikir';
+  document.getElementById('guidedHint').textContent='Timer 20 menit. Jaga langkah, napas, dan dzikir dengan nyaman.';
+  document.getElementById('guidedPauseBtn').textContent='⏸ Jeda';
+  show('guidedActivity');
+  guidedTimerId=setInterval(()=>{
+    if(!guidedRunning)return;
+    guidedRemaining--;updateGuidedTimer();
+    if(guidedRemaining<=0){clearInterval(guidedTimerId);guidedRunning=false;completeDailyActivity('morning');toast('🏃 Jogging + Dzikir 20 menit selesai!');show('home');}
+  },1000);
+}
+function toggleGuidedTimer(){guidedRunning=!guidedRunning;document.getElementById('guidedPauseBtn').textContent=guidedRunning?'⏸ Jeda':'▶ Lanjut'}
+function cancelGuidedActivity(){clearInterval(guidedTimerId);guidedRunning=false;show('home')}
+function updateMusicTimer(){
+  document.getElementById('musicTimer').textContent=formatTimer(musicRemaining);
+  document.getElementById('musicStatus').textContent=formatTimer(musicRemaining);
+  document.getElementById('musicCircle').style.setProperty('--timer-p',(musicRemaining/600*100)+'%');
+}
+function startCalmMusic(){
+  clearInterval(musicTimerId);musicRemaining=600;musicRunning=true;updateMusicTimer();
+  const frame=document.getElementById('calmYoutube');
+  frame.src='https://www.youtube.com/embed/z9PDdlipsiM?autoplay=1&rel=0';
+  document.getElementById('musicPauseBtn').textContent='⏸ Jeda';
+  show('calmMusic');
+  musicTimerId=setInterval(()=>{
+    if(!musicRunning)return;
+    musicRemaining--;updateMusicTimer();
+    if(musicRemaining<=0){clearInterval(musicTimerId);musicRunning=false;frame.src='';completeDailyActivity('noon');toast('🎵 Musik tenang 10 menit selesai!');show('home');}
+  },1000);
+}
+function toggleMusicTimer(){musicRunning=!musicRunning;document.getElementById('musicPauseBtn').textContent=musicRunning?'⏸ Jeda':'▶ Lanjut'}
+function cancelMusicActivity(){clearInterval(musicTimerId);musicRunning=false;document.getElementById('calmYoutube').src='';show('home')}
+
 function exportData(){const blob=new Blob([JSON.stringify({profile:users[user],sessions:getSessions()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LIFT-'+user+'-backup.json';a.click()}
 if(user&&users[user])enter();
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
