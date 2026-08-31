@@ -482,8 +482,19 @@ const EMOTIONS=[
  ['🙂','Tenang'],['😊','Bahagia'],['💪','Berdaya'],['🤍','Damai']
 ];
 const DZS=['Astaghfirullah','Alhamdulillah','Subhanallah'];
-let users=JSON.parse(localStorage.liftUsers||'{}'), user=localStorage.liftCurrentUser||'';
+let users=JSON.parse(localStorage.liftUsers||'{}'), user='';
 let selectedTime='Pagi', before=[], after=[], dzCounts=[0,0,0], breathTimer=null;
+
+// Setiap kali halaman dibuka, pengguna harus memilih akun.
+// Data tetap dipisahkan berdasarkan nama pengguna sehingga akun yang berbeda
+// tidak akan pernah memakai progres/jurnal akun lain.
+function resetSessionState(){
+  selectedTime='Pagi';
+  before=[]; after=[]; dzCounts=[0,0,0];
+  breathTimer=null;
+  clearInterval(window.guidedTimerId);
+  clearInterval(window.musicTimerId);
+}
 
 function key(k){return 'lift_'+k+'_'+user}
 function getSessions(){return JSON.parse(localStorage.getItem(key('sessions'))||'[]')}
@@ -493,9 +504,27 @@ function register(){
  const name=regName.value.trim(),u=regUser.value.trim().toLowerCase(),p=regPass.value,p2=regPass2.value;
  if(!name||!u||p.length<4||p!==p2)return alert('Lengkapi data. Kata sandi minimal 4 karakter dan harus sama.');
  if(users[u])return alert('Nama pengguna sudah terdaftar di perangkat ini.');
- users[u]={name,password:p,createdAt:new Date().toISOString()};localStorage.liftUsers=JSON.stringify(users);user=u;localStorage.liftCurrentUser=u;enter();
+ users[u]={name,password:p,createdAt:new Date().toISOString()};
+ localStorage.liftUsers=JSON.stringify(users);
+
+ // Akun baru selalu dimulai dari nol. Hapus kemungkinan data lama
+ // dengan nama akun yang sama (misalnya sisa data prototype sebelumnya).
+ Object.keys(localStorage).forEach(k=>{if(k.endsWith('_'+u))localStorage.removeItem(k)});
+ user=u;
+ localStorage.liftCurrentUser=u;
+ resetSessionState();
+ enter();
 }
-function login(){const u=loginUser.value.trim().toLowerCase(),p=loginPass.value;if(users[u]&&users[u].password===p){user=u;localStorage.liftCurrentUser=u;enter()}else alert('Nama pengguna atau kata sandi belum sesuai.')}
+function login(){
+ const u=loginUser.value.trim().toLowerCase(),p=loginPass.value;
+ if(users[u]&&users[u].password===p){
+   // Saat berpindah akun, keadaan sementara selalu dikosongkan.
+   resetSessionState();
+   user=u;
+   localStorage.liftCurrentUser=u;
+   enter();
+ }else alert('Nama pengguna atau kata sandi belum sesuai.');
+}
 function enter(){
   loginScreen.classList.add('hidden');main.classList.remove('hidden');
   greet.textContent='Selamat datang kembali, '+users[user].name+' 🌿';profileName.textContent=users[user].name;
@@ -518,7 +547,12 @@ function showOpeningAfterLogin(){
   document.body.appendChild(div);renderDailyMotivation();
 }
 
-function logout(){localStorage.removeItem('liftCurrentUser');location.reload()}
+function logout(){
+  resetSessionState();
+  user='';
+  localStorage.removeItem('liftCurrentUser');
+  location.reload();
+}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.s===id));if(id==='progress')renderProgress();if(id==='missions')renderMissions();if(id==='program')renderProgram();if(id==='home')renderHome();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');clearTimeout(window.t);window.t=setTimeout(()=>x.classList.remove('show'),1800)}
 function moodHTML(selected,fn){return EMOTIONS.map((m,i)=>`<button class="mood ${selected.includes(i)?'sel':''}" onclick="${fn}(${i},this)"><div class="e">${m[0]}</div><small>${m[1]}</small><span class="mood-pop-label">${selected.includes(i)?'Dipilih':''}</span></button>`).join('')}
@@ -990,7 +1024,11 @@ function toggleMusicTimer(){musicRunning=!musicRunning;document.getElementById('
 function cancelMusicActivity(){clearInterval(musicTimerId);musicRunning=false;document.getElementById('calmYoutube').src='';show('home')}
 
 function exportData(){const blob=new Blob([JSON.stringify({profile:users[user],sessions:getSessions()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LIFT-'+user+'-backup.json';a.click()}
-if(user&&users[user])enter();
+// Jangan otomatis membuka akun terakhir.
+// Ini penting agar orang berbeda yang memakai browser/perangkat yang sama
+// selalu mulai dari halaman login dan tidak melihat data pengguna sebelumnya.
+user='';
+localStorage.removeItem('liftCurrentUser');
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 <script>renderDailyMotivation();</script>
